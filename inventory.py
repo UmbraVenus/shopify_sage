@@ -88,7 +88,7 @@ def app():
         submitted = st.form_submit_button("Submit")
         if submitted:
             st.write("You have inputted warehouse "+str(input_id)+" of "+input_name)
-            warehouse.loc[len(warehouse.index)] = [input_name, int(input_id)]
+            warehouse.loc[len(warehouse.index)] = [input_id, input_name]
             st.dataframe(warehouse)
             df.to_csv("warehouse.csv", index=False)
     
